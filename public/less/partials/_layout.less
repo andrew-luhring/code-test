@@ -1,0 +1,28 @@
+.col_1 {
+  .display(flex);
+  .flex(1);
+}
+
+.col_2 {
+  .display(inline-flex);
+}
+
+.content {
+  .col_2;
+  .flex-direction(column);
+}
+
+.content-heading {
+  font-weight: 100;
+}
+
+.device-wrapper {
+  .col_1;
+}
+
+.device {
+  width: @device_width;
+  height: @device_height;
+  background: #000;
+}
+

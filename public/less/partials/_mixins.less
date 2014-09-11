@@ -1,0 +1,54 @@
+@import "_lesshat";
+/*
+
+Rems without having to write the px fallback each time.
+
+@prop - The property to output.
+@val  - The value to convert; Default is px to rem but can be rem to px.
+
+Compatible in everything.
+*/
+.remFallback(@prop, @val) when (isunit(@val, px)){
+  @num : unit(@val);
+  @rem : @num / 10;
+
+  @remVal : unit(@rem, rem);
+
+  @{prop} : @val;
+  @{prop} : @remVal;
+}
+
+.remFallback(@prop, @val) when (isunit(@val, rem)){
+  @num : unit(@val);
+  @px : @num * 10;
+
+  @pxVal : unit(@px, px);
+
+  @{prop} : @pxVal;
+  @{prop} : @val;
+}
+
+.remFallback(@prop, @val) when(default()){
+
+  @num : unit(@val);
+  @rem : @num / 10;
+
+  @pxVal : unit(@num, px);
+  @remVal : unit(@rem, rem);
+
+  @{prop} : @pxVal;
+  @{prop} : @remVal;
+
+}
+
+/*
+Alias for .remFallback
+
+@prop - The property to output.
+@val  - The value to convert; Default is px to rem but can be rem to px.
+
+Compatible in everything.
+*/
+.rf(@prop, @val){
+  .remFallback(@prop, @val);
+}

@@ -1,0 +1,35 @@
+{
+  "name": "exercise-andrew-luhring",
+  "version": "0.0.1",
+  "main": "controller.js",
+  "private": "true",
+  "engines": {
+    "node": ">=0.10.26"
+  },
+  "dependencies": {
+    "express": "^4.3.1",
+    "less": "^1.7.0",
+    "node-dev": "^2.3.0",
+    "phantomjs": "^1.9.7-14",
+    "serve-static": "^1.1.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-less": "^0.11.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-requirejs": "^0.4.4",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-shell": "^0.6.4",
+    "karma": "^0.12.9",
+    "karma-chrome-launcher": "^0.1.3",
+    "karma-growl-reporter": "^0.1.1",
+    "karma-jasmine": "^0.1.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-requirejs": "^0.2.1",
+    "karma-script-launcher": "^0.1.0"
+  },
+  "scripts": {
+    "start": "node --harmony $* ./node_modules/.bin/node-dev controller.js"
+  },
+  "author": "Andrew Luhring"
+}

@@ -1,0 +1,8 @@
+node_modules/**/*
+lib/**/*
+**/lib/**
+**/acc*.js
+**/*.min*.js
+**/*compressed*
+**/*compiled*
+

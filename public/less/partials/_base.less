@@ -1,0 +1,81 @@
+// Pallette
+@blue       : #63B4C4;
+@blue_dark  : #5096A9;
+@blue_grey  : #B1C9CD;
+@red        : #E47165;
+@red_dark   : #CD4B49;
+@white      : #fff;
+
+// Instance Colors
+@body_bg    : @blue;
+@body_clr   : @white;
+
+@device_circle_bg: @blue_dark;
+
+@input_bg   : @white;
+
+@button_bg  : @red;
+@button_bd  : @red_dark;
+
+
+// Size
+@content_width  : 950px;
+@right_col      : 710px;
+
+@device_circle  : 205px;
+@device_height  : 225px;
+@device_width   : 150px;
+@right_col_height: 215px;
+
+@input_height : 40px;
+@input_width  : 468px;
+@button_width : 225px;
+@button_height: 42px;
+
+// Font size
+@h1_sz  : 24px;
+@p_sz   : 12px;
+
+@input_sz   : 13px;
+@corner_sz  : 5px;
+
+@import "_mixins";
+
+
+html {
+  background: @blue;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+  *
+, *:before
+, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  color: @body_clr;
+  font-family: "Open Sans";
+  width : @content_width;
+  .display(flex);
+  .flex-direction(row);
+  .rf(font-size, 1.6rem);
+}
+
+h1 {
+  .rf(font-size, @h1_sz);
+}
+
+p {
+  .rf(font-size, @p_sz);
+}
+
+  i
+, b
+, em
+, strong{
+    font-weight: normal;
+    font-style: normal;
+
+}

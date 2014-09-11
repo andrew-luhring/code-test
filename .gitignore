@@ -1,0 +1,16 @@
+.idea
+.DS_STORE
+.project
+\#*
+ignore_*
+*\~
+node_modules/*
+node_modules
+*private*
+tests/**/examples
+tests/**/examples/*
+tests/unit/examples
+tests/results/*
+**/lib/
+**/*.min.*
+public/css/
