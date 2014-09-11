@@ -1,0 +1,61 @@
+body{
+  .rf(font-size, 1.6rem);
+}
+
+p{
+  -webkit-font-smoothing: antialiased;
+}
+.content{
+  strong{
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 5px;
+  }
+}
+.content-heading {
+  font-weight: 100;
+}
+
+.device-circle{
+  background: @device_circle_bg;
+  border-radius: 50%;
+}
+
+.device {
+  border: 1px solid #000;
+  .rf(border-radius, 10px);
+}
+
+.button{
+  background: @button_bg;
+  border: 1px solid @button_bd;
+  color: @body_clr;
+  font-family: inherit;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  .rf(font-size, 18px);
+}
+
+.input{
+  border: 1px solid @white;
+  font-size: @input_sz;
+  padding-left: @input_height * 1.5;
+}
+
+  .button
+, .input{
+  border-radius: @corner_sz;
+}
+
+.rental .envelope{
+  border-right: 2px solid @icon_bg;
+  border-top-left-radius: @corner_sz;
+  border-bottom-left-radius: @corner_sz;
+  .box-sizing(content-box);
+  width: @input_height;
+  height: @input_height + 2;
+  left: 0;
+}
+.envelope:before{
+  display: block;
+}

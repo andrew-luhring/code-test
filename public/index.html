@@ -9,13 +9,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head >
 <body>
-  <main
-    class="content"
-    data-ng-contorller="form as FormController"
-    novalidate
-    name="rentalForm"
-    role="main"
-  >
+  <main class="content" role="main" >
     <h1 class="content-heading">
       <i>Packback's</i> <i>One-Day eTextbooks Rentals</i>
       gives you the power to only pay for your textbook when you actually
@@ -28,12 +22,18 @@
       Just tell us your email and we'll send you a coupon code so you can try out
       <i>PackBack's</i> <i>One-Day eTextbook Rentals</i> for <em>free</em>.
     </p>
-    <form>
-      <input
-        class="input rental"
-        placeholder="Enter your school email address"
-        type="email"
-      />
+    <form name="rentalForm"
+      data-ng-contorller="form as FormController"
+      novalidate
+      >
+      <div class="input-wrapper rental">
+        <i class="icon envelope"></i>
+        <input
+          class="input rental"
+          placeholder="Enter your school email address"
+          type="email"
+        />
+      </div>
       <button
         class="button rental"
       >
@@ -42,8 +42,8 @@
     </form>
   </main>
   <div class="device-wrapper">
-    <div class="device"></div>
     <div class="device-circle"></div>
+    <div class="device"></div>
   </div>
 </body >
 </html >

@@ -1,28 +1,87 @@
 .col_1 {
   .display(flex);
-  .flex(1);
 }
 
 .col_2 {
   .display(inline-flex);
 }
 
-.content {
-  .col_2;
-  .flex-direction(column);
+html{
+  .align-content(center);
+  .col_1;
+  .justify-content(center);
 }
 
-.content-heading {
-  font-weight: 100;
+body{
+  margin:auto;
+  min-width: @content_width;
+  overflow: visible;
+  width : @content_width;
+  
+  .align-content(center);
+  .col_1;
+  .flex-direction(row-reverse);
+  .justify-content(space-between);
+}
+
+.content {
+   max-width: @right_col;
+  .col_2;
+  .flex-direction(column);
+  .justify-content(space-between);
 }
 
 .device-wrapper {
-  .col_1;
+  position: relative;
+  width: @device_circle;
+  min-width: @device_circle;
+  .align-items(center);
+  .col_2;
+  .justify-content(center);
+}
+
+  .device
+, .device-circle {
+  display: block;
 }
 
 .device {
-  width: @device_width;
   height: @device_height;
-  background: #000;
+  width: @device_width;
+  position:relative;
+  margin:auto;
+  z-index: 2;
 }
 
+.device-circle{
+  height: @device_circle;
+  position: absolute;
+  top: ( @device_height - @device_circle ) / 2;
+  width: @device_circle;
+}
+
+form{
+  width: 100%;
+//  min-width: @right_col;
+  .display(flex);
+  .flex-direction(row);
+  .align-content(space-between);
+  .justify-content(space-between);
+}
+
+.button{
+  width: @button_width;
+}
+
+.input-wrapper{
+  position: relative;
+}
+
+.input{
+  width: (@right_col - @button_width)- 20px;
+}
+
+  .input
+, .button{
+  height: @button_height;
+}

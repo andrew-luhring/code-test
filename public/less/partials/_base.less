@@ -17,6 +17,7 @@
 @button_bg  : @red;
 @button_bd  : @red_dark;
 
+@icon_bg    : @blue_grey;
 
 // Size
 @content_width  : 950px;
@@ -34,18 +35,50 @@
 
 // Font size
 @h1_sz  : 24px;
-@p_sz   : 12px;
+@p_sz   : 14px;
 
-@input_sz   : 13px;
+@input_sz   : 14px;
 @corner_sz  : 5px;
 
 @import "_mixins";
+
+  article
+, aside
+, body
+, section
+, header
+, footer
+, main
+, table
+, h1
+, h2
+, h3
+, h4
+, h5
+, h6
+, nav
+, div
+, ul
+, li
+, ol
+, p
+, input
+, output
+, form
+, output
+, button
+, meter
+, progress{
+  .clear_all;
+}
+
 
 
 html {
   background: @blue;
   box-sizing: border-box;
   font-size: 62.5%;
+  height: 100%;
 }
 
   *
@@ -57,10 +90,6 @@ html {
 body {
   color: @body_clr;
   font-family: "Open Sans";
-  width : @content_width;
-  .display(flex);
-  .flex-direction(row);
-  .rf(font-size, 1.6rem);
 }
 
 h1 {
@@ -75,7 +104,10 @@ p {
 , b
 , em
 , strong{
-    font-weight: normal;
-    font-style: normal;
+    font-weight: inherit;
+    font-style: inherit;
+}
 
+.icon{
+  position: absolute;
 }
