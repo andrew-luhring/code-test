@@ -57,12 +57,8 @@ module.exports = function(grunt) {
     , TEST_DIR      = 'tests/'
 
     , jsFiles = [
-        JS_DIR    + '*.js'
-      , JS_DIR    + '**/*.js'
-      , JS_DIR    + '**/**/*.js'
-      , TEST_DIR  + '*.js'
+        JS_DIR    + '**/*.js'
       , TEST_DIR  + '**/*.js'
-      , TEST_DIR  + '**/**/*.js'
       ]
     , lessFiles = [
         LESS_DIR + "*.less"
@@ -92,8 +88,12 @@ module.exports = function(grunt) {
       , watch: {
           js: {
             files: jsFiles
-          , tasks: ['jshint']
-          , options: {spawn: false}
+          , tasks: ['lint']
+          , options: {
+              livereload:true
+            , livereloadOnError: false
+            , spawn: false
+            }
           }
         , less: {
             files : lessFiles
@@ -113,7 +113,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   
-  grunt.registerTask("jshint", ['jshint'] );
+  grunt.registerTask("lint", ['jshint'] );
   grunt.registerTask("less", ['shell:less'] );
   grunt.registerTask("default", ["watch"]);
 };
