@@ -22,23 +22,28 @@
       Just tell us your email and we'll send you a coupon code so you can try out
       <i>PackBack's</i> <i>One-Day eTextbook Rentals</i> for <em>free</em>.
     </p>
-    <form name="rentalForm"
-      data-ng-contorller="form as FormController"
+    <form name="rental"
+      data-ng-controller="FormController as form"
+
       novalidate
       >
       <div class="input-wrapper rental">
         <i class="icon envelope"></i>
-        <input
-          class="input rental"
-          placeholder="Enter your school email address"
-          type="email"
-        />
+        <label class="required">
+          <span class="accessibility-text">Enter your school email address</span >
+          <input type = "email" class="input rental" name="rental-email"
+                 placeholder = "Enter your school email address"
+                 data-ng-required="true"
+                 data-ng-model="form.rentalEmail"
+            />
+          <div data-attrs="{{form.err}}" > {{form.err}}</div>
+        </label>
       </div>
-      <button
-        class="button rental"
-      >
-        Get a Free Rental
-      </button>
+
+      <button class = "button rental"
+              data-ng-disabled="form.invalid"
+              data-ng-click="form.trySubmit(form.rentalEmail)"
+        >Get a Free Rental</button>
     </form>
   </main>
   <div class="device-wrapper">

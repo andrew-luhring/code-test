@@ -6,6 +6,8 @@
 @red_dark   : #CD4B49;
 @white      : #fff;
 
+//@new : rgba(@red_dark);
+
 // Instance Colors
 @body_bg    : @blue;
 @body_clr   : @white;
@@ -15,6 +17,7 @@
 @input_bg   : @white;
 
 @button_bg  : @red;
+@button_disabled: desaturate(darken(@red, 30%), 20%);
 @button_bd  : @red_dark;
 
 @icon_bg    : @blue_grey;
@@ -110,4 +113,10 @@ p {
 
 .icon{
   position: absolute;
+}
+.accessibility-text{
+  font-size: 1px;
+  position: absolute;
+  z-index: -1;
+  opacity:0;
 }

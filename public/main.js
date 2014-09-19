@@ -1,17 +1,21 @@
 (function(){
   'use strict';
 
-  var ASSETS_DIR = './'
-    , JS_DIR  = ASSETS_DIR +'js/'
-    , com= JS_DIR + 'common'
-    , init= JS_DIR + 'init'
-    , form = JS_DIR + 'form';
+  var com     = 'js/common'
+    , init    = 'js/init'
+    , form    = 'js/forms'
+    , formS   = form + '/services'
+    , formD   = form + '/directives'
+    , formC   = form + '/controllers';
 
   requirejs.config({
     paths : {
       init: init
     , com : com
     , form: form
+    , formC : formC
+    , formS : formS
+    , formD : formD
     , angular: 'lib/angular/angular'
     , jquery: 'lib/jquery/dist/jquery'
     , lodash: 'lib/lodash/dist/lodash.compat'
@@ -26,6 +30,12 @@
     }
   });
 
+
+  requirejs([
+      'angular'
+    , 'jquery'
+    , 'init/apps_bootstrap'
+    ], function(angular, jquery, apps_bootstrap) {});
   requirejs.onError = function (err) {
     console.log("error type:   "+ err.requireType);
     console.log('modules: ' + err.requireModules);
@@ -35,12 +45,7 @@
     }
     throw err;
   };
-  requirejs([
-      'angular'
-    , 'jquery'
-    , 'init/apps_bootstrap' ], function(angular, jquery, apps_bootstrap) {
-      }
-  );
+
   // create a new object that inherits from an old one.
   if (typeof Object.create !== 'function'){
     Object.create = function(o){

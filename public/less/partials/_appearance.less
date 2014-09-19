@@ -27,15 +27,26 @@ p{
 }
 
 .button{
-  background: @button_bg;
-  border: 1px solid @button_bd;
-  color: @body_clr;
+
   font-family: inherit;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   .rf(font-size, 18px);
 }
+.button.rental{
+  background: @button_bg;
+  border: 1px solid @button_bd;
+  color: @body_clr;
+  .transition(background 0.45s);
 
+  &:disabled{
+    background: @button_disabled;
+    .transition(background 0.45s);
+//    color(@button_bg);
+//    .rgba(@button_bg);
+//    .desaturate(@button_bg, 50%);
+  }
+}
 .input{
   border: 1px solid @white;
   font-size: @input_sz;
@@ -58,4 +69,8 @@ p{
 }
 .envelope:before{
   display: block;
+}
+
+.error{
+  color:red;
 }
